@@ -1,0 +1,22 @@
+{
+  "folders":
+  [
+    {
+      "file_exclude_patterns":
+      [
+       "*.sublime-*",
+        "*.bundle.js",
+        "*.lock",
+        "*.log",
+      ],
+      "folder_exclude_patterns":
+      [
+        "node_modules",
+        "build",
+        "dist",
+        "*.",
+      ],
+      "path": "./",
+    },
+  ],
+}

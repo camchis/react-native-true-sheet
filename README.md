@@ -1,82 +1,35 @@
-# React Native True Sheet
+# expo-bottom-sheet
 
-[![CI](https://github.com/lodev09/react-native-true-sheet/actions/workflows/ci.yml/badge.svg)](https://github.com/lodev09/react-native-true-sheet/actions/workflows/ci.yml)
-[![Maintainability](https://api.codeclimate.com/v1/badges/0bd49973c6c61d85e2be/maintainability)](https://codeclimate.com/github/lodev09/react-native-true-sheet/maintainability)
-[![NPM Downloads](https://img.shields.io/npm/d18m/%40lodev09%2Freact-native-true-sheet)](https://www.npmjs.com/package/@lodev09/react-native-true-sheet)
+The true native bottom sheet experience 💩
 
-The true native bottom sheet experience for your React Native Apps. 💩
+# API documentation
 
-<img alt="React Native True Sheet" src="docs/static/img/preview.gif" width="600px" />
+- [Documentation for the main branch](https://github.com/expo/expo/blob/main/docs/pages/versions/unversioned/sdk/bottom-sheet.md)
+- [Documentation for the latest stable release](https://docs.expo.dev/versions/latest/sdk/bottom-sheet/)
 
-## Features
+# Installation in managed Expo projects
 
-* Implemented in the native realm.
-* Clean, fast, and lightweight.
-* Asynchronus `ref` [methods](https://sheet.lodev09.com/reference/methods#ref-methods).
-* Bonus! [Blur](https://sheet.lodev09.com/reference/types#blurtint) support on IOS 😎
+For [managed](https://docs.expo.dev/archive/managed-vs-bare/) Expo projects, please follow the installation instructions in the [API documentation for the latest stable release](#api-documentation). If you follow the link and there is no documentation available then this library is not yet usable within managed projects &mdash; it is likely to be included in an upcoming Expo SDK release.
 
-## Installation
+# Installation in bare React Native projects
 
-You can install the package by using either `yarn` or `npm`.
+For bare React Native projects, you must ensure that you have [installed and configured the `expo` package](https://docs.expo.dev/bare/installing-expo-modules/) before continuing.
 
-```sh
-yarn add @lodev09/react-native-true-sheet
+### Add the package to your npm dependencies
+
 ```
-```sh
-npm i @lodev09/react-native-true-sheet
+npm install expo-bottom-sheet
 ```
 
-Next, run the following to install it on IOS.
+### Configure for iOS
 
-```sh
-cd ios && pod install
-```
+Run `npx pod-install` after installing the npm package.
 
-## Documentation
 
-- [Guides](https://sheet.lodev09.com/category/guides)
-- [Reference](https://sheet.lodev09.com/category/reference)
-- [Example](example)
+### Configure for Android
 
-## Usage
 
-```tsx
-import { TrueSheet } from "@lodev09/react-native-true-sheet"
 
-export const App = () => {
-  const sheet = useRef<TrueSheet>(null)
+# Contributing
 
-  // Present the sheet ✅
-  const present = async () => {
-    await sheet.current?.present()
-    console.log('horray! sheet has been presented 💩')
-  }
-
-  // Dismiss the sheet ✅
-  const dismiss = async () => {
-    await sheet.current?.dismiss()
-    console.log('Bye bye 👋')
-  }
-
-  return (
-    <View>
-      <Button onPress={present} title="Present" />
-      <TrueSheet
-        ref={sheet}
-        sizes={['auto', 'large']}
-        cornerRadius={24}
-      >
-        <Button onPress={dismiss} title="Dismiss" />
-      </TrueSheet>
-    </View>
-  )
-}
-```
-
-## Contributing
-
-See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
-
-## License
-
-[MIT](LICENSE)
+Contributions are very welcome! Please refer to guidelines described in the [contributing guide]( https://github.com/expo/expo#contributing).
